@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[安装hexo的时候出现以下问题]]></title>
+      <url>%2F2016%2F12%2F13%2Fhelllllllllllllllllo%2F</url>
+      <content type="text"><![CDATA[问题描述安装hexo的时候出现以下问题npm WARN deprecated swig@1.4.2:This package is no longer maintained，由于npm官方源在国内的下载速度极其慢，用官网的npm install hexo-cli -g速度特别慢，所以这里我使用了国内镜像安装的hexo，淘宝的npm——cnpm，但后续的操作12345$ npm install hexo-cli -g $ hexo init$ npm install$ hexo g$ hexo s 会出现问题，尤其是npm命令会提示npm WARN deprecated swig@1.4.2:This package is no longer maintained怎么办呢？ 解决方法因为使用了npm install -g cnpm --registry=https://registry.npm.taobao.org所以之后的npm install命令 都得改成cnpm install就可以啦。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2016%2F12%2F13%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
