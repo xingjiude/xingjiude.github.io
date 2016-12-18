@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[hexo的常用命令]]></title>
+      <url>%2F2016%2F12%2F18%2Fhexo-order%2F</url>
+      <content type="text"><![CDATA[记录些常用的hexo使用方法，至于怎么安装和配置hexo就不写了，网上很多教程，这里只是记录下常用的使用方法 1.新建文章hexo n &quot;新文章名&quot; == hexo new &quot;新文章名&quot;例如：使用hexo n hello命令创建一篇文章，hexo会默认在source/_posts目录下面给你创建一个名为hello.md的文件。如果文件名有空格注意加””。注意：文章名字是取决于文件里面title的配置，而不是这个hello，所以新建的时候可以写简单点的文件名，之后再在里面title更改文章标题 2.生成静态文件hexo g == hexo generate生成网站静态文件到默认设置的public文件夹。便于查看网站生成的静态文件或者手动部署网站；如果是自动部署，不需要先执行该命令 3.启动本地服务器hexo s == hexo server启动本地服务器，用于预览博客。默认地址： http://localhost:4000/ 。预览的同时可以修改文章内容或主题代码，保存后刷新页面即可。如果更改_config.yml，则需要重启本地服务 4.清除缓存hexo c == hexo clean清除缓存文件db.json和已生成的静态文件public。网站显示异常时可以执行这条命令试试。 5.部署到git仓库hexo d == hexo deploy自动生成网站静态文件，并部署到设定的仓库。 6.草稿hexo p == hexo publishHexo提供草稿功能，在_drafts目录下的文章不会发表到网站上，你可以通过命令hexo publish &quot;文章名&quot;发布你的草稿，改命令会将文章移到_posts目录下。但是也可以设置_config.yml配置文件的render_drafts字段，使草稿默认发布到站点中。 7.报错1ERROR Deployer not found: git 解决方法npm install hexo-deployer-git --save 8.文章格式hexo文章格式是基于Markdown语法的，详情参考以下网页https://www.zybuluo.com/mdeditor]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[安装hexo的时候出现以下问题]]></title>
       <url>%2F2016%2F12%2F13%2Fhelllllllllllllllllo%2F</url>
       <content type="text"><![CDATA[问题描述安装hexo的时候出现以下问题npm WARN deprecated swig@1.4.2:This package is no longer maintained，由于npm官方源在国内的下载速度极其慢，用官网的npm install hexo-cli -g速度特别慢，所以这里我使用了国内镜像安装的hexo，淘宝的npm——cnpm，但后续的操作12345$ npm install hexo-cli -g $ hexo init$ npm install$ hexo g$ hexo s 会出现问题，尤其是npm命令会提示npm WARN deprecated swig@1.4.2:This package is no longer maintained怎么办呢？ 解决方法因为使用了npm install -g cnpm --registry=https://registry.npm.taobao.org所以之后的npm install命令 都得改成cnpm install就可以啦。]]></content>
