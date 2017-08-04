@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[仿京东二级菜单，更符合使用习惯的菜单]]></title>
+      <url>%2F2017%2F08%2F02%2FJDmenu%2F</url>
+      <content type="text"><![CDATA[仔细的朋友会发现京东菜单和普通的菜单不一样，一级菜单去二级菜单的时候路过其他一级菜单并不会更换菜单这就涉及到了一些用户体验的问题：大家都知道两点之间直线最短。从一级菜单去二级菜单如果先横后折（如下图 路径1）。第一，很麻烦。第二，有时候会误触其他菜单容易出现失误。大大的影响了用户的体验。最好的情况是路径2。如何解决问题呢？ 下面是具体思路 1,开发普通的二级菜单，事件代理的方式进行绑定。 2,加入延迟来优化，切换子菜单的时候，用setTimeOut设置延迟。但是会出现副作用，那就是移动多个菜单的时候，会每个菜单都过一遍。所以用debounce去抖技术，在事件频繁触发的时候只执行最后一次。 3,创建一个数组来跟踪记录鼠标的位置。a点为鼠标上一个点（也可以理解为从一级菜单到二级菜单出发位置），b点是子菜单左上角的点，c点是子菜单左下角的点，p是鼠标现在的点，如果p在abc的三角形内的其他一级菜单行路过就不切换菜单，否则直接进行菜单的切换。需要的公式：向量：Vab = Pb - Pa;二维向量叉乘公式：a(x1,y1)*b(x2,y2) = x1*y2 - x2*y1; 具体代码相见GitHub库，我每一步都加了注释方便理解，点击这里进入]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[hexo的常用命令]]></title>
       <url>%2F2016%2F12%2F18%2Fhexo-order%2F</url>
       <content type="text"><![CDATA[记录些常用的hexo使用方法，至于怎么安装和配置hexo就不写了，网上很多教程，这里只是记录下常用的使用方法 1.新建文章hexo n &quot;新文章名&quot; == hexo new &quot;新文章名&quot;例如：使用hexo n hello命令创建一篇文章，hexo会默认在source/_posts目录下面给你创建一个名为hello.md的文件。如果文件名有空格注意加””。注意：文章名字是取决于文件里面title的配置，而不是这个hello，所以新建的时候可以写简单点的文件名，之后再在里面title更改文章标题 2.生成静态文件hexo g == hexo generate生成网站静态文件到默认设置的public文件夹。便于查看网站生成的静态文件或者手动部署网站；如果是自动部署，不需要先执行该命令 3.启动本地服务器hexo s == hexo server启动本地服务器，用于预览博客。默认地址： http://localhost:4000/ 。预览的同时可以修改文章内容或主题代码，保存后刷新页面即可。如果更改_config.yml，则需要重启本地服务 4.清除缓存hexo c == hexo clean清除缓存文件db.json和已生成的静态文件public。网站显示异常时可以执行这条命令试试。 5.部署到git仓库hexo d == hexo deploy自动生成网站静态文件，并部署到设定的仓库。 6.草稿hexo p == hexo publishHexo提供草稿功能，在_drafts目录下的文章不会发表到网站上，你可以通过命令hexo publish &quot;文章名&quot;发布你的草稿，改命令会将文章移到_posts目录下。但是也可以设置_config.yml配置文件的render_drafts字段，使草稿默认发布到站点中。 7.报错1ERROR Deployer not found: git 解决方法npm install hexo-deployer-git --save 8.文章格式hexo文章格式是基于Markdown语法的，详情参考以下网页https://www.zybuluo.com/mdeditor 正文中可以使用 &lt;!--more--&gt; 设置文章摘要 如下: 以上是文章摘要&lt;!--more--&gt;以下是余下全文]]></content>
